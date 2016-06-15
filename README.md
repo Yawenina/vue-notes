@@ -1,6 +1,6 @@
 # vue-notes
 
-> A Vue.js project
+> A notes app build by Vue.js
 
 ## Build Setup
 
