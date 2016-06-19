@@ -28,6 +28,7 @@
 	#toolbar{
 		float: left;
 		width: 80px;
+		height: 100%;
 		background-color: #30414D;
 		color: #767676;
 		padding: 35px 25px 25px;

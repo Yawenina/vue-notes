@@ -9,3 +9,8 @@ export const toggleFavorite = ({dispatch}) => {
 export const deleteNote = ({dispatch}) => {
 	dispatch('DELETE_NOTE')
 }
+
+export const updateActiveNode = ({dispatch},note) => {
+	dispatch('SET_ACTIVE_NOTE',note)
+}
+

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-
+import bootstrap from '../node_modules/bootstrap/dist/css/bootstrap.css'
   import Toolbar from './components/Toolbar.vue'
   import NotesList from './components/NotesList.vue'
   import Editor from './components/Editor.vue'
@@ -20,3 +20,7 @@
     }
   }
 </script>
+
+<style>
+  html,#app{height: 100%}
+</style>

@@ -23,6 +23,17 @@ const mutations = {
 	DELETE_NOTE (state) {
 		this.notes.$remove(state.activeNote)
 		this.activeNote = state.notes[0]
+	},
+	SET_ACTIVE_NOTE (state,note) {
+		state.activeNote = note
+	},
+	EDIT_NOTE (state,text) {
+		state.activeNote.text = text
 	}
 	
 }
+
+export default new Vuex.Store({
+	state,
+	mutations
+})
