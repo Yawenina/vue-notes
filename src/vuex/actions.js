@@ -14,3 +14,6 @@ export const updateActiveNode = ({dispatch},note) => {
 	dispatch('SET_ACTIVE_NOTE',note)
 }
 
+export const editNote = ({dispatch},e) => {
+	dispatch('EDIT_NOTE',e.target.value)
+}

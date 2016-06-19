@@ -21,8 +21,8 @@ const mutations = {
 		state.activeNote.favorite = !state.activeNote.favorite
 	},
 	DELETE_NOTE (state) {
-		this.notes.$remove(state.activeNote)
-		this.activeNote = state.notes[0]
+		state.notes.$remove(state.activeNote)
+		state.activeNote = state.notes[0]
 	},
 	SET_ACTIVE_NOTE (state,note) {
 		state.activeNote = note

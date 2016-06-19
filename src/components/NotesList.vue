@@ -2,33 +2,36 @@
 	<div id="notes-list">
 		<div id="list-header">
 			<h2>Notes | coligo</h2>
-		</div>
-		<div class="btn-group btn-group-justified">
-			<div class="btn-group">
-				<button class="btn btn-default" @click="show ='all'"
-						:class="{active:show==='all'}"
-				>All Notes</button>
+			<div class="btn-group btn-group-justified">
+				<div class="btn-group">
+					<button class="btn btn-default" @click="show ='all'"
+							:class="{active:show==='all'}"
+					>All Notes</button>
+				</div>
+				<div class="btn-group">
+					<div class="btn btn-default" @click="show='favorites'"
+						:class="{active:show === 'favorites'}"
+					>Favorites</div>
+				</div>
 			</div>
-			<div class="btn-group">
-				<div class="btn btn-default" @click="show='favorites'"
-					:class="{active:show === 'favorites'}"
-				>Favorites</div>
+
+		</div>
+		
+		<div class="container">
+			<div class="list-group">
+				<a class="list-group-item" v-for="note in filteredNotes"
+					@click="updateActiveNote(note)"
+					:class="{active:activeNote === note}">
+
+					<h4 class="list-group-item-heading">
+						{{note.text.trim().substring(0,30)}}
+					</h4>
+				</a>
 			</div>
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="list-group">
-			<a class="list-group-item" v-for="note in filteredNotes"
-				@click="updateActiveNote(note)"
-				:class="{active:activeNote === note}">
-
-				<h4 class="list-group-item-heading">
-					{{note.text.trim().substring(0,30)}}
-				</h4>
-			</a>
-		</div>
-	</div>
+	
 </template>
 
 <script>
@@ -86,6 +89,10 @@
 	    overflow: auto;
 	    width: 100%;
 	    padding: 0;
+	}
+	#notes-list .container .list-group-item {
+	  border: 0;
+	  border-radius: 0;
 	}
 </style>
 
